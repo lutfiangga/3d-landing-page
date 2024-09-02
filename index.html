@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cemetery Landing Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      .bebas {
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .kanit {
+        font-family: "Kanit", sans-serif;
+      }
+
+      .floating {
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translate(0, 0px);
+        }
+
+        50% {
+          transform: translate(0, 8px);
+        }
+
+        100% {
+          transform: translate(0, -0px);
+        }
+      }
+
+      .floating-4 {
+        animation-name: floating;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes floating-4 {
+        0% {
+          transform: translate(0, 0px);
+        }
+
+        50% {
+          transform: translate(0, 8px);
+        }
+
+        100% {
+          transform: translate(0, -0px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 overflow-x-hidden">
+    <!-- Navbar -->
+    <header
+      class="flex kanit justify-between items-center py-4 px-6 md:px-12 sticky top-0 bg-white z-50 border-b border-gray-200">
+      <div class="flex items-center gap-4">
+        <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8" />
+        <div class="flex flex-col text-left justify-start">
+          <div class="font-bold text-2xl">SMAN 8</div>
+          <div class="text-lg -mt-2">Yogyakarta</div>
+        </div>
+      </div>
+      <nav id="navbar" class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-gray-700">Beranda</a>
+        <a href="#about" class="hover:text-gray-700">Tentang Website</a>
+        <a href="#makam" class="hover:text-gray-700">Makam</a>
+        <a href="#team" class="hover:text-gray-700">Tim</a>
+      </nav>
+      <button id="burger" class="block md:hidden">☰</button>
+      <!-- Menu mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-200">
+        <nav class="flex flex-col items-start p-4 space-y-4">
+          <a href="#home" class="hover:text-gray-700 w-full">Beranda</a>
+          <a href="#about" class="hover:text-gray-700 w-full"
+            >Tentang Website</a
+          >
+          <a href="#makam" class="hover:text-gray-700 w-full">Makam</a>
+          <a href="#team" class="hover:text-gray-700 w-full">Tim</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="flex flex-col items-center text-center py-8 md:py-16">
+        <h1 class="text-5xl mx-4 md:text-7xl bebas font-bold mb-2">
+          Serenity. Peace. Memory.
+        </h1>
+        <p class="text-gray-600 mb-4 kanit">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, quam.
+        </p>
+        <!-- <a
+          href="#"
+          class="bg-gray-900 kanit text-white py-2 px-4 rounded-full hover:bg-gray-700 mb-4"
+          >Our Services</a
+        > -->
+
+        <!-- Image with White Gradient Overlay -->
+        <div class="relative w-full">
+          <img
+            src="assets/img/hero.png"
+            alt="Serene Cemetery"
+            class="w-full h-auto object-cover" />
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
+        </div>
+      </section>
+      <!-- about -->
+      <section
+        id="about"
+        class="mx-8 md:mx-12 rounded-2xl md:rounded-4xl my-8 md:my-16">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="maps">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.97055414075!2d110.37484495!3d-7.803250449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2sYogyakarta%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1725252889123!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-xl"></iframe>
+          </div>
+          <div class="bg-black md:mx-2 gap-2 rounded-2xl my-2 md:my-0 p-8">
+            <p
+              class="uppercase bebas text-lg text-white px-4 py-2 border rounded-xl border-white inline-block">
+              tentang website
+            </p>
+            <h2
+              class="bebas text-2xl md:text-5xl lg:text-7xl text-white mt-4 font-semibold">
+              lokasi & sejarah
+            </h2>
+            <p
+              class="text-gray-300 kanit text-justify text-sm my-4 md:text-base">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              quia ut vitae perferendis laborum veniam, similique voluptates
+              recusandae optio quisquam nihil cum dolore, sunt consectetur
+              officiis libero voluptas. Tempore, nulla.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- makam -->
+      <section
+        id="makam"
+        class="mx-8 md:mx-12 rounded-2xl md:rounded-4xl bg-black my-8 md:my-16">
+        <div class="flex flex-col">
+          <div class="flex flex-row p-6 md:p-12 text-white justify-between">
+            <p class="bebas text-3xl font-semibold mx-4">Makam</p>
+            <p class="kanit font-thin text-sm sm:text-base">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+              ipsa!
+            </p>
+          </div>
+          <div class="mx-6 h-1 bg-gray-300 rounded-xl"></div>
+          <div class="flex flex-row p-4 text-white justify-between mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- card -->
+              <div class="card bg-gray-900 flex flex-col p-4 rounded-xl">
+                <div class="flex flex-row justify-between">
+                  <h1 class="text-4xl bebas">Makam</h1>
+                  <a
+                    href="makam1.html"
+                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    ><i class="fa-solid fa-location-arrow"></i
+                  ></a>
+                </div>
+                <p class="text-gray-300 my-4 kanit">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam, ipsa!
+                </p>
+                <div class="image w-full h-96 rounded-xl">
+                  <img
+                    src="https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Makam"
+                    class="w-full h-full rounded-xl object-cover" />
+                </div>
+              </div>
+              <!-- card -->
+              <div class="card bg-indigo-600 flex flex-col p-4 rounded-xl">
+                <div class="flex flex-row justify-between">
+                  <h1 class="text-4xl bebas">Makam</h1>
+                  <a
+                    href="makam1.html"
+                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    ><i class="fa-solid fa-location-arrow"></i
+                  ></a>
+                </div>
+                <p class="text-gray-300 my-4 kanit">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam, ipsa!
+                </p>
+                <div class="image w-full h-96 rounded-xl">
+                  <img
+                    src="https://images.pexels.com/photos/460617/pexels-photo-460617.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Makam"
+                    class="w-full h-full rounded-xl object-cover" />
+                </div>
+              </div>
+              <!-- card -->
+              <div class="card bg-gray-900 flex flex-col p-4 rounded-xl">
+                <div class="flex flex-row justify-between">
+                  <h1 class="text-4xl bebas">Makam</h1>
+                  <a
+                    href="makam1.html"
+                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    ><i class="fa-solid fa-location-arrow"></i
+                  ></a>
+                </div>
+                <p class="text-gray-300 my-4 kanit">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam, ipsa!
+                </p>
+                <div class="image w-full h-96 rounded-xl">
+                  <img
+                    src="https://images.pexels.com/photos/3648308/pexels-photo-3648308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Makam"
+                    class="w-full h-full rounded-xl object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- team -->
+      <section id="team" class="py-12">
+        <div class="max-w-6xl mx-auto px-4">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-5xl lg:text-7xl font-bold bebas">
+              Meet Our Team
+            </h2>
+            <p class="text-gray-600 mt-4">
+              A group of dedicated professionals committed to excellence.
+            </p>
+          </div>
+
+          <!-- Team Members -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white shadow-md rounded-lg text-center p-6">
+              <img
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt="Team Member"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+              <h3 class="text-xl font-semibold">John Doe</h3>
+              <p class="text-gray-500">CEO</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-white shadow-md rounded-lg text-center p-6">
+              <img
+                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt="Team Member"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+              <h3 class="text-xl font-semibold">Jane Smith</h3>
+              <p class="text-gray-500">Chief Marketing Officer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <section
+      class="flex flex-col md:flex-row justify-between p-6 items-center space-y-6 md:space-y-0">
+      <div class="card flex flex-col w-full md:w-1/2 max-h-96 p-8 md:p-12">
+        <h1 class="font-semibold bebas text-center text-3xl mb-4">
+          Tentang<span class="text-yellow-500"> Makam Kersan</span>
+        </h1>
+        <p class="text-gray-500 kanit text-justify" style="text-indent: 3rem">
+          Dusun Kersan terletak di Kelurahan Triwidadi, Kecamatan Pajangan,
+          Kabupaten Bantul, Daerah Istimewa Yogyakarta. Dusun ini merupakan
+          <strong class="text-yellow-600">salah satu</strong> dari tiga
+          kelurahan yang bergabung pada tahun
+          <strong class="text-yellow-600">1946</strong> untuk membentuk
+          <strong class="text-yellow-600">Triwidadi</strong>. Di dusun ini pula
+          terdapat situs makam
+          <strong class="text-yellow-600">Pangeran Haryo Manggolo</strong>,
+          seorang prajurit dari masa perang
+          <strong class="text-yellow-600">Diponegoro (awal 1800-an)</strong>,
+          menjadikannya salah satu landmark bersejarah di wilayah Kersan ini.
+        </p>
+      </div>
+      <div class="card w-full md:w-1/2 h-auto">
+        <img
+          data-aos="fade-left"
+          src="http://kersan.iblogger.org/assets/img/pulau.png"
+          class="object-fit w-full h-full"
+          alt="about" />
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-black rounded-t-2xl kanit text-white py-10 text-center">
+      <p class="text-sm text-gray-500">
+        &copy; 2024 Omah Creativa. All rights reserved.
+      </p>
+      <div class="mt-4 space-x-4">
+        <a href="#home" class="hover:text-gray-300">Beranda</a>
+        <a href="#about" class="hover:text-gray-300">Tentang Website</a>
+        <a href="#makam" class="hover:text-gray-300">Makam</a>
+        <a href="#team" class="hover:text-gray-300">Tim</a>
+      </div>
+    </footer>
+
+    <!-- AOS init -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      document.getElementById("burger").addEventListener("click", function () {
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+        } else {
+          mobileMenu.classList.remove("flex");
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // Menutup menu ketika salah satu link di klik
+      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.remove("flex");
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
