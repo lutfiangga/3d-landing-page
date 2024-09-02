@@ -32,7 +32,7 @@
       </div>
       <nav id="navbar" class="hidden md:flex space-x-8">
         <a href="#home" class="hover:text-gray-700">Beranda</a>
-        <a href="#about" class="hover:text-gray-700">Tentang Website</a>
+        <a href="#about" class="hover:text-gray-700">Tentang Makam</a>
         <a href="#makam" class="hover:text-gray-700">Makam</a>
         <a href="#team" class="hover:text-gray-700">Tim</a>
       </nav>
@@ -44,7 +44,7 @@
         <nav class="flex flex-col items-start p-4 space-y-4">
           <a href="#home" class="hover:text-gray-700 w-full">Beranda</a>
           <a href="#about" class="hover:text-gray-700 w-full"
-            >Tentang Website</a
+            >Tentang Makam</a
           >
           <a href="#makam" class="hover:text-gray-700 w-full">Makam</a>
           <a href="#team" class="hover:text-gray-700 w-full">Tim</a>
@@ -81,6 +81,7 @@
             class="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
         </div>
       </section>
+
       <!-- about -->
       <section
         id="about"
@@ -100,7 +101,7 @@
           <div class="bg-black md:mx-2 gap-2 rounded-2xl my-2 md:my-0 p-8">
             <p
               class="uppercase bebas text-lg text-white px-4 py-2 border rounded-xl border-white inline-block">
-              tentang website
+              tentang makam
             </p>
             <h2
               class="bebas text-2xl md:text-5xl lg:text-7xl text-white mt-4 font-semibold">
@@ -133,12 +134,14 @@
           <div class="flex flex-row p-4 text-white justify-between mt-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <!-- card -->
-              <div class="card bg-gray-900 flex flex-col p-4 rounded-xl">
+              <div
+                class="hover:bg-indigo-600 cursor-pointer bg-gray-900 flex flex-col p-4 rounded-xl"
+                onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
-                  <h1 class="text-4xl bebas">Makam</h1>
+                  <h1 class="text-4xl bebas uppercase">nisan pak lilik</h1>
                   <a
                     href="makam1.html"
-                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    class="px-5 py-4 bg-black text-white hover:bg-yellow-400 hover:text-indigo-600 rounded-full ml-4"
                     ><i class="fa-solid fa-location-arrow"></i
                   ></a>
                 </div>
@@ -154,16 +157,18 @@
                 </div>
               </div>
               <!-- card -->
-              <div class="card bg-indigo-600 flex flex-col p-4 rounded-xl">
+              <div
+                class="hover:bg-yellow-400 hover:text-black cursor-pointer bg-indigo-600 flex flex-col p-4 rounded-xl"
+                onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
-                  <h1 class="text-4xl bebas">Makam</h1>
+                  <h1 class="text-4xl bebas uppercase">Nisan Arab</h1>
                   <a
                     href="makam1.html"
-                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    class="px-5 py-4 bg-indigo-900 text-white rounded-full ml-4 hover:bg-black hover:text-white"
                     ><i class="fa-solid fa-location-arrow"></i
                   ></a>
                 </div>
-                <p class="text-gray-300 my-4 kanit">
+                <p class="my-4 kanit">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Magnam, ipsa!
                 </p>
@@ -175,12 +180,14 @@
                 </div>
               </div>
               <!-- card -->
-              <div class="card bg-gray-900 flex flex-col p-4 rounded-xl">
+              <div
+                class="hover:bg-indigo-600 cursor-pointer bg-gray-900 flex flex-col p-4 rounded-xl"
+                onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
-                  <h1 class="text-4xl bebas">Makam</h1>
+                  <h1 class="text-4xl bebas uppercase">Periode</h1>
                   <a
                     href="makam1.html"
-                    class="px-5 py-4 bg-black text-white rounded-full ml-4"
+                    class="px-5 py-4 bg-black text-white rounded-full ml-4 hover:bg-yellow-400 hover:text-indigo-600"
                     ><i class="fa-solid fa-location-arrow"></i
                   ></a>
                 </div>
@@ -275,7 +282,7 @@
       </p>
       <div class="mt-4 space-x-4">
         <a href="#home" class="hover:text-gray-300">Beranda</a>
-        <a href="#about" class="hover:text-gray-300">Tentang Website</a>
+        <a href="#about" class="hover:text-gray-300">Tentang Makam</a>
         <a href="#makam" class="hover:text-gray-300">Makam</a>
         <a href="#team" class="hover:text-gray-300">Tim</a>
       </div>
@@ -283,7 +290,7 @@
     <!-- Back to Top Button -->
     <button
       id="back-to-top"
-      class="fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-3 rounded-full shadow-lg hidden hover:bg-indigo-700 focus:outline-none"
+      class="fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-3 rounded-full shadow-lg hidden hover:text-yellow-400 hover:bg-indigo-700 focus:outline-none"
       onclick="scrollToTop()">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
@@ -293,51 +300,7 @@
     <script>
       AOS.init();
     </script>
-    <!-- back to top -->
-    <script>
-      // Back to Top Button Logic
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 100) {
-          backToTopButton.classList.remove("hidden");
-        } else {
-          backToTopButton.classList.add("hidden");
-        }
-      });
-
-      function scrollToTop() {
-        const scrollDuration = 600; // Total duration of scroll in milliseconds
-        const scrollStep = -window.scrollY / (scrollDuration / 15); // Calculate the scroll step
-        const scrollInterval = setInterval(() => {
-          if (window.scrollY !== 0) {
-            window.scrollBy(0, scrollStep); // Scroll by calculated step
-          } else {
-            clearInterval(scrollInterval); // Stop scrolling when top is reached
-          }
-        }, 15); // Interval time in milliseconds
-      }
-    </script>
-    <!-- mobile navbar -->
-    <script>
-      document.getElementById("burger").addEventListener("click", function () {
-        var mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.classList.add("flex");
-        } else {
-          mobileMenu.classList.remove("flex");
-          mobileMenu.classList.add("hidden");
-        }
-      });
-
-      // Menutup menu ketika salah satu link di klik
-      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.remove("flex");
-          document.getElementById("mobile-menu").classList.add("hidden");
-        });
-      });
-    </script>
+    <!-- custom js -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

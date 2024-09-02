@@ -32,11 +32,11 @@
       </div>
       <nav id="navbar" class="hidden md:flex space-x-8">
         <a href="/" class="hover:text-gray-700">Beranda</a>
-        <a href="index.html/#about" class="hover:text-gray-700"
-          >Tentang Website</a
+        <a href="/#about" class="hover:text-gray-700"
+          >Tentang Makam</a
         >
-        <a href="index.html/#makam" class="hover:text-gray-700">Makam</a>
-        <a href="index.html/#team" class="hover:text-gray-700">Tim</a>
+        <a href="/#makam" class="hover:text-gray-700">Makam</a>
+        <a href="/#team" class="hover:text-gray-700">Tim</a>
       </nav>
       <button id="burger" class="block md:hidden">☰</button>
       <!-- Menu mobile -->
@@ -45,13 +45,13 @@
         class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-200">
         <nav class="flex flex-col items-start p-4 space-y-4">
           <a href="/" class="hover:text-gray-700 w-full">Beranda</a>
-          <a href="index.html/#about" class="hover:text-gray-700 w-full"
-            >Tentang Website</a
+          <a href="/#about" class="hover:text-gray-700 w-full"
+            >Tentang Makam</a
           >
-          <a href="index.html/#makam" class="hover:text-gray-700 w-full"
+          <a href="/#makam" class="hover:text-gray-700 w-full"
             >Makam</a
           >
-          <a href="index.html/#team" class="hover:text-gray-700 w-full">Tim</a>
+          <a href="/#team" class="hover:text-gray-700 w-full">Tim</a>
         </nav>
       </div>
     </header>
@@ -85,7 +85,7 @@
       </section>
       <!-- about -->
       <a
-        href="index.html"
+        href="/"
         class="ml-4 md:ml-12 uppercase bebas font-semibold text-xl md:text-2xl lg:text-4xl"
         ><i class="fa-solid fa-reply mr-4"></i>kembali</a
       >
@@ -134,14 +134,22 @@
         &copy; 2024 Omah Creativa. All rights reserved.
       </p>
       <div class="mt-4 space-x-4">
-        <a href="index.html/#home" class="hover:text-gray-300">Beranda</a>
-        <a href="index.html/#about" class="hover:text-gray-300"
-          >Tentang Website</a
+        <a href="/#home" class="hover:text-gray-300">Beranda</a>
+        <a href="/#about" class="hover:text-gray-300"
+          >Tentang Makam</a
         >
-        <a href="index.html/#makam" class="hover:text-gray-300">Makam</a>
-        <a href="index.html/#team" class="hover:text-gray-300">Tim</a>
+        <a href="/#makam" class="hover:text-gray-300">Makam</a>
+        <a href="/#team" class="hover:text-gray-300">Tim</a>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-3 rounded-full shadow-lg hidden hover:text-yellow-400 hover:bg-indigo-700 focus:outline-none"
+      onclick="scrollToTop()">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- AOS init -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -151,89 +159,12 @@
     <script>
       AOS.init();
     </script>
-    <!-- back to top -->
-    <script>
-      // Back to Top Button Logic
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 100) {
-          backToTopButton.classList.remove("hidden");
-        } else {
-          backToTopButton.classList.add("hidden");
-        }
-      });
-
-      function scrollToTop() {
-        const scrollDuration = 600; // Total duration of scroll in milliseconds
-        const scrollStep = -window.scrollY / (scrollDuration / 15); // Calculate the scroll step
-        const scrollInterval = setInterval(() => {
-          if (window.scrollY !== 0) {
-            window.scrollBy(0, scrollStep); // Scroll by calculated step
-          } else {
-            clearInterval(scrollInterval); // Stop scrolling when top is reached
-          }
-        }, 15); // Interval time in milliseconds
-      }
-    </script>
-    <!-- mobile navbar -->
-    <script>
-      document.getElementById("burger").addEventListener("click", function () {
-        var mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.classList.add("flex");
-        } else {
-          mobileMenu.classList.remove("flex");
-          mobileMenu.classList.add("hidden");
-        }
-      });
-
-      // Menutup menu ketika salah satu link di klik
-      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.remove("flex");
-          document.getElementById("mobile-menu").classList.add("hidden");
-        });
-      });
-    </script>
     <!-- 3js -->
     <script src="assets/js/three.min.js"></script>
     <!-- panolens js -->
     <script src="assets/js/panolens.min.js"></script>
-    <script type="module">
-      import * as PostProcessing from "https://cdn.jsdelivr.net/npm/postprocessing@6.35.3/build/index.js";
-      const customComposer = document.querySelector(
-        "effect-composer#customComposer"
-      );
-
-      const grid = new PostProcessing.GridEffect();
-      const sepia = new PostProcessing.SepiaEffect();
-      // The camera is set automatically when added to the <effect-composer>
-      const noisePass = new PostProcessing.EffectPass(undefined, grid, sepia);
-      customComposer.addPass(noisePass);
-
-      customComposer.nextElementSibling.addEventListener("input", (e) => {
-        grid.scale = e.target.value;
-        // Request a render frame, to update
-        customComposer.queueRender();
-      });
-    </script>
-
-    <script>
-      const panoramaImage = new PANOLENS.ImagePanorama(
-        "assets/img/gerbang.jpg"
-      );
-      const imageContainer = document.querySelector(".makam");
-
-      const viewer = new PANOLENS.Viewer({
-        container: imageContainer,
-        autoRotate: true,
-        autoRotateSpeed: 0.3,
-        controlBar: false,
-      });
-
-      viewer.add(panoramaImage);
-    </script>
+    <script type="module" src="assets/js/panorama.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
