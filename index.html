@@ -43,9 +43,7 @@
         class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-200">
         <nav class="flex flex-col items-start p-4 space-y-4">
           <a href="#home" class="hover:text-gray-700 w-full">Beranda</a>
-          <a href="#about" class="hover:text-gray-700 w-full"
-            >Tentang Makam</a
-          >
+          <a href="#about" class="hover:text-gray-700 w-full">Tentang Makam</a>
           <a href="#makam" class="hover:text-gray-700 w-full">Makam</a>
           <a href="#team" class="hover:text-gray-700 w-full">Tim</a>
         </nav>
@@ -57,6 +55,7 @@
       <!-- Hero Section -->
       <section
         id="home"
+        data-aos="fade-up"
         class="flex flex-col items-center text-center py-8 md:py-16">
         <h1 class="text-5xl mx-4 md:text-7xl bebas font-bold mb-2">
           Serenity. Peace. Memory.
@@ -87,7 +86,7 @@
         id="about"
         class="mx-8 md:mx-12 rounded-2xl md:rounded-4xl my-8 md:my-16">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="maps">
+          <div id="maps" data-aos="fade-right">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.97055414075!2d110.37484495!3d-7.803250449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2sYogyakarta%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1725252889123!5m2!1sid!2sid"
               width="100%"
@@ -98,7 +97,9 @@
               referrerpolicy="no-referrer-when-downgrade"
               class="rounded-xl"></iframe>
           </div>
-          <div class="bg-black md:mx-2 gap-2 rounded-2xl my-2 md:my-0 p-8">
+          <div
+            data-aos="fade-left"
+            class="bg-black md:mx-2 gap-2 rounded-2xl my-2 md:my-0 p-8">
             <p
               class="uppercase bebas text-lg text-white px-4 py-2 border rounded-xl border-white inline-block">
               tentang makam
@@ -121,6 +122,7 @@
       <!-- makam -->
       <section
         id="makam"
+        data-aos="fade-up"
         class="mx-8 md:mx-12 rounded-2xl md:rounded-4xl bg-black my-8 md:my-16">
         <div class="flex flex-col">
           <div class="flex flex-row p-6 md:p-12 text-white justify-between">
@@ -135,6 +137,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <!-- card -->
               <div
+                data-aos="fade-right"
                 class="hover:bg-indigo-600 cursor-pointer bg-gray-900 flex flex-col p-4 rounded-xl"
                 onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
@@ -158,6 +161,7 @@
               </div>
               <!-- card -->
               <div
+                data-aos="fade-up"
                 class="hover:bg-yellow-400 hover:text-black cursor-pointer bg-indigo-600 flex flex-col p-4 rounded-xl"
                 onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
@@ -181,6 +185,7 @@
               </div>
               <!-- card -->
               <div
+                data-aos="fade-left"
                 class="hover:bg-indigo-600 cursor-pointer bg-gray-900 flex flex-col p-4 rounded-xl"
                 onclick="window.location.href='makam1.html'">
                 <div class="flex flex-row justify-between">
@@ -208,10 +213,10 @@
       </section>
 
       <!-- team -->
-      <section id="team" class="py-12">
+      <section id="team" class="py-12" data-aos="fade-up">
         <div class="max-w-6xl mx-auto px-4">
           <!-- Section Title -->
-          <div class="text-center mb-12">
+          <div class="text-center mb-12" data-aos="fade-up">
             <h2 class="text-2xl md:text-5xl lg:text-7xl font-bold bebas">
               Meet Our Team
             </h2>
@@ -223,7 +228,9 @@
           <!-- Team Members -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <!-- Team Member 1 -->
-            <div class="bg-white shadow-md rounded-lg text-center p-6">
+            <div
+              class="bg-white shadow-md rounded-lg text-center p-6"
+              data-aos="fade-right">
               <img
                 src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 alt="Team Member"
@@ -233,7 +240,9 @@
             </div>
 
             <!-- Team Member 2 -->
-            <div class="bg-white shadow-md rounded-lg text-center p-6">
+            <div
+              class="bg-white shadow-md rounded-lg text-center p-6"
+              data-aos="fade-left">
               <img
                 src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 alt="Team Member"
