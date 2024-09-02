@@ -9,71 +9,15 @@
       rel="stylesheet" />
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet" />
-
-    <style>
-      .bebas {
-        font-family: "Bebas Neue", sans-serif;
-      }
-      .kanit {
-        font-family: "Kanit", sans-serif;
-      }
-
-      .floating {
-        animation-name: floating;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-      }
-
-      @keyframes floating {
-        0% {
-          transform: translate(0, 0px);
-        }
-
-        50% {
-          transform: translate(0, 8px);
-        }
-
-        100% {
-          transform: translate(0, -0px);
-        }
-      }
-
-      .floating-4 {
-        animation-name: floating;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-      }
-
-      @keyframes floating-4 {
-        0% {
-          transform: translate(0, 0px);
-        }
-
-        50% {
-          transform: translate(0, 8px);
-        }
-
-        100% {
-          transform: translate(0, -0px);
-        }
-      }
-    </style>
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body class="bg-white text-gray-900 overflow-x-hidden">
     <!-- Navbar -->
@@ -87,7 +31,7 @@
         </div>
       </div>
       <nav id="navbar" class="hidden md:flex space-x-8">
-        <a href="index.html/#home" class="hover:text-gray-700">Beranda</a>
+        <a href="/" class="hover:text-gray-700">Beranda</a>
         <a href="index.html/#about" class="hover:text-gray-700"
           >Tentang Website</a
         >
@@ -100,9 +44,7 @@
         id="mobile-menu"
         class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-200">
         <nav class="flex flex-col items-start p-4 space-y-4">
-          <a href="index.html/#home" class="hover:text-gray-700 w-full"
-            >Beranda</a
-          >
+          <a href="/" class="hover:text-gray-700 w-full">Beranda</a>
           <a href="index.html/#about" class="hover:text-gray-700 w-full"
             >Tentang Website</a
           >
@@ -151,7 +93,7 @@
         id="about"
         class="mx-8 md:mx-12 rounded-2xl md:rounded-4xl my-8 md:my-16">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="maps">
+          <div class="flex justify-center">
             <model-viewer
               id="astronaut1"
               src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
@@ -163,16 +105,7 @@
               camera-controls
               style="width: 35rem; height: 35rem"
               ><effect-composer id="customComposer" msaa="8"> </effect-composer>
-              <div class="controls">
-                <label for="scale">Grid Scale</label>
-                <input
-                  id="scale"
-                  type="range"
-                  min="0"
-                  max="2"
-                  step="0.01"
-                  value="1" /></div
-            ></model-viewer>
+            </model-viewer>
           </div>
           <div class="bg-black md:mx-2 gap-2 rounded-2xl my-2 md:my-0 p-8">
             <p
@@ -218,6 +151,32 @@
     <script>
       AOS.init();
     </script>
+    <!-- back to top -->
+    <script>
+      // Back to Top Button Logic
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          backToTopButton.classList.remove("hidden");
+        } else {
+          backToTopButton.classList.add("hidden");
+        }
+      });
+
+      function scrollToTop() {
+        const scrollDuration = 600; // Total duration of scroll in milliseconds
+        const scrollStep = -window.scrollY / (scrollDuration / 15); // Calculate the scroll step
+        const scrollInterval = setInterval(() => {
+          if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep); // Scroll by calculated step
+          } else {
+            clearInterval(scrollInterval); // Stop scrolling when top is reached
+          }
+        }, 15); // Interval time in milliseconds
+      }
+    </script>
+    <!-- mobile navbar -->
     <script>
       document.getElementById("burger").addEventListener("click", function () {
         var mobileMenu = document.getElementById("mobile-menu");
@@ -238,7 +197,9 @@
         });
       });
     </script>
+    <!-- 3js -->
     <script src="assets/js/three.min.js"></script>
+    <!-- panolens js -->
     <script src="assets/js/panolens.min.js"></script>
     <script type="module">
       import * as PostProcessing from "https://cdn.jsdelivr.net/npm/postprocessing@6.35.3/build/index.js";
