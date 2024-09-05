@@ -43,16 +43,14 @@ document.querySelectorAll("#mobile-menu a").forEach(function (link) {
 
 // panorama
 
-      const panoramaImage = new PANOLENS.ImagePanorama(
-        "assets/img/gerbang.jpg"
-      );
-      const imageContainer = document.querySelector(".makam");
+const panoramaImage = new PANOLENS.ImagePanorama("assets/img/gerbang.jpg");
+const imageContainer = document.querySelector(".makam");
 
-      const viewer = new PANOLENS.Viewer({
-        container: imageContainer,
-        autoRotate: true,
-        autoRotateSpeed: 0.3,
-        controlBar: false,
-      });
+const viewer = new PANOLENS.Viewer({
+  container: imageContainer,
+  autoRotate: true,
+  autoRotateSpeed: 0.3,
+  controlBar: false,
+});
 
-      viewer.add(panoramaImage);
+viewer.add(panoramaImage);
