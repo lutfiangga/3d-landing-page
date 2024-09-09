@@ -40,17 +40,3 @@ document.querySelectorAll("#mobile-menu a").forEach(function (link) {
     document.getElementById("mobile-menu").classList.add("hidden");
   });
 });
-
-// panorama
-
-const panoramaImage = new PANOLENS.ImagePanorama("assets/img/gerbang.jpg");
-const imageContainer = document.querySelector(".makam");
-
-const viewer = new PANOLENS.Viewer({
-  container: imageContainer,
-  autoRotate: true,
-  autoRotateSpeed: 0.3,
-  controlBar: false,
-});
-
-viewer.add(panoramaImage);

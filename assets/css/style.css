@@ -11,6 +11,10 @@
 section {
   scroll-margin-top: 6rem;
 }
+.text-indent {
+  text-indent: 2rem;
+}
+
 
 .floating {
   animation-name: floating;
